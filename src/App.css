@@ -1,0 +1,13 @@
+
+
+.grid{
+  display: grid;
+  grid-template-columns: 20vw 50vw 25vw;
+}
+
+.boxes{
+  display: grid;
+
+  grid-template-rows: 20vh 10vh 25vh ;
+  gap:4px;
+}
