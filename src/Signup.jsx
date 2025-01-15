@@ -17,6 +17,8 @@ const handleName = (e) =>{
     console.log(username)
    setUsername('')
    navigate('/today')
+   window.location.reload();
+
 }
 
   return (

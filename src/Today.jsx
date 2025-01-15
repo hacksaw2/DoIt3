@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import DownArrow from './Svgs/DownArrow'
 import Alarm from './Svgs/Alarm'
 import Calender from './Svgs/Calender'
+import DoubleArrowSvg from './Svgs/DoubleArrowSvg'
 
 
 
@@ -82,12 +83,13 @@ function Today() {
                     />
                     <div className='text-[10px] text-red'>{login}</div>
                     
-                    <div className="bottomsection flex justify-around mt-[9vh]">
+                    <div className="bottomsection flex justify-around mt-[7vh]">
                         <svgs className="flex gap-4">
                             <Alarm />
+                            <DoubleArrowSvg/>
                             <Calender />
                         </svgs>
-                        <button className='bg-[#cedfcf] p-1 rounded-lg text-[#4f8a51] shadow-sm shadow-slate-400 '>Add Task</button>
+                        <button className='bg-[#cedfcf] p-1 rounded-lg text-[#4f8a51] shadow-sm shadow-slate-400  '>Add Task</button>
                     </div>
 
                 </form>
@@ -111,7 +113,7 @@ function Today() {
 
                           
 
-                            <div className="section w-[30vw] text-[12px]  overflow-y-hidden ">{task}</div>
+                            <div className="section w-[30vw] text-[12px]  overflow-y-scroll ">{task}</div>
                            <div className="priorties w-[8vw] flex gap-[4px] text-[10px] ml-2">
                            <div className="high bg-green-300 p-[2px] rounded-sm">High</div>
                            <div className="medium bg-green-200 p-[2px] rounded-sm">Medium</div>
