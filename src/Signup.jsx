@@ -11,13 +11,14 @@ function Signup(){
 const [username, setUsername] = useState('')
 const navigate  = useNavigate()
 
+// saving the username into the localStorage
 const handleName = (e) =>{
     e.preventDefault()
     sessionStorage.setItem('Username',username)
     console.log(username)
    setUsername('')
    navigate('/today')
-   window.location.reload();
+   
 
 }
 

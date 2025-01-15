@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+
+// Svgs 
 import TodoSvg from './Svgs/TodoSvg';
 import MenuIconSvg from './Svgs/MenuIconSvg';
 import SearchIconSvg from './Svgs/SearchIconSvg';
@@ -10,19 +12,23 @@ import Alarm from './Svgs/Alarm';
 import Calender from './Svgs/Calender';
 import AllTasks from './Svgs/AllTasks';
 import Important from './Svgs/Important';
-import { Outlet, NavLink } from 'react-router-dom';
 import SignupSvg from './Svgs/SignupSvg';
+import { Outlet, NavLink } from 'react-router-dom';
+
 
 function App() {
   const [username, setUsername] = useState(null);
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const [isLoading, setIsLoading] = useState(true);
 
+
+  // useEffect to retrieve the username from the sessionStorage
   useEffect(() => {
     const savedName = sessionStorage.getItem('Username');
     if (savedName) {
       setUsername(savedName);
     }
-    setIsLoading(false); // Loading finished
+    setIsLoading(false);
+
   }, []);
 
   return (
@@ -51,6 +57,9 @@ function App() {
         </div>
       </div>
 
+
+      {/* Part1 -------------------*/}
+
       <div className="grid h-[90vh] ml-[4vw] lg:ml-[5vw]">
         <div>
           <div className="circle"></div>
@@ -64,10 +73,9 @@ function App() {
                   <NavLink
                     to="/signup"
                     className={({ isActive }) =>
-                      `${
-                        isActive
-                          ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[10vw] lg:w-[17vw] mb-1"
-                          : "flex text-sm h-7 gap-2 p-1 mb-1"
+                      `${isActive
+                        ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[10vw] lg:w-[17vw] mb-1"
+                        : "flex text-sm h-7 gap-2 p-1 mb-1"
                       }`
                     }
                   >
@@ -83,10 +91,9 @@ function App() {
                   <NavLink
                     to="/today"
                     className={({ isActive }) =>
-                      `${
-                        isActive
-                          ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[10vw] lg:w-[17vw] mb-1"
-                          : "flex text-sm h-7 gap-2 p-1 mb-1"
+                      `${isActive
+                        ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[10vw] lg:w-[17vw] mb-1"
+                        : "flex text-sm h-7 gap-2 p-1 mb-1"
                       }`
                     }
                   >
@@ -110,9 +117,16 @@ function App() {
           </div>
         </div>
 
+        {/* Part2-------------- */}
+
+
+        {/* routing page */}
         <div className="column2 bg-[#fbfdfc] w-[80vw] md:w-[49vw] lg:w-[49vw]">
           <Outlet />
         </div>
+
+
+        {/* Part 3------------------- */}
 
         <div className="column3 text-sm hidden md:block lg:block bg-[#eef6ef]">
           <div className="app1 flex h-10 border-b-2 border-[#d3e0d4] items-center w-[23vw] ml-[2vw]">
