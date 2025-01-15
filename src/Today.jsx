@@ -111,14 +111,14 @@ function Today() {
 
                           
 
-                            <div className="section w-[30vw]">{task}</div>
-                           <div className="priorties w-[10vw] flex gap-[4px] text-[10px]">
+                            <div className="section w-[30vw] text-[12px]  overflow-y-hidden ">{task}</div>
+                           <div className="priorties w-[8vw] flex gap-[4px] text-[10px] ml-2">
                            <div className="high bg-green-300 p-[2px] rounded-sm">High</div>
                            <div className="medium bg-green-200 p-[2px] rounded-sm">Medium</div>
                            <div className="low bg-green-100 p-[2px] rounded-sm">Low</div>
                            </div>
                            
-                            <button onClick={() => handleDelete(index)} className='ml-10 bg-[#cedfcf] text-[#4f8a51]  shadow-sm shadow-gray-400 p-1 rounded-md'>Delete </button>
+                            <button onClick={() => handleDelete(index)} className='lg:ml-12 ml-20 bg-[#cedfcf] text-[#4f8a51]  shadow-sm shadow-gray-400 p-1 rounded-md text-sm lg:text-md'>Delete </button>
                         </div>
                     ))
                 )}
