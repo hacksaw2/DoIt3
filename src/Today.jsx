@@ -3,26 +3,41 @@ import { useState, useEffect } from 'react'
 import DownArrow from './Svgs/DownArrow'
 import Alarm from './Svgs/Alarm'
 import Calender from './Svgs/Calender'
+import { use } from 'react'
 
 
 function Today() {
     const [task, setTask] = useState('')
     const [tasks, setTasks] = useState([])
+    const [username, setUsername] = useState(null)
 
+    
+    useEffect(() => {
+        const savedName = sessionStorage.getItem('Username')
+        console.log(savedName)
+        if(savedName){
+            setUsername(savedName)
+        }
+  
+      }, [])
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(username){
         const updatedTasks = [...tasks, task];
         setTasks(updatedTasks);
 
-        localStorage.setItem('tasks', JSON.stringify(updatedTasks))
+        sessionStorage.setItem('tasks', JSON.stringify(updatedTasks))
         console.log(task)
         setTask('')
+        } else {
+            console.log('No user logged In')
+        }
     }
 
     useEffect(() => {
-        const savedTasks = localStorage.getItem('tasks')
+        const savedTasks = sessionStorage.getItem('tasks')
         if (savedTasks) {
             setTasks(JSON.parse(savedTasks));
         } else {
@@ -35,8 +50,10 @@ function Today() {
         updatedTasks.splice(index, 1)
 
         setTasks(updatedTasks);
-        localStorage.setItem('tasks', JSON.stringify(updatedTasks))
+        sessionStorage.setItem('tasks', JSON.stringify(updatedTasks))
     }
+
+    
 
     return (
         <div>
