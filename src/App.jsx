@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#fbfdfc]">
+    <div className="bg-[#fbfdfc] h-[100vh]">
       {/* Navbar */}
       <div className="flex justify-center">
         <div className="navbar outer-box flex h-[56px] items-center w-[90vw]">
@@ -74,7 +74,7 @@ function App() {
                     to="/signup"
                     className={({ isActive }) =>
                       `${isActive
-                        ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[10vw] lg:w-[17vw] mb-1"
+                        ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[8vw] lg:w-[17vw] mb-1"
                         : "flex text-sm h-7 gap-2 p-1 mb-1"
                       }`
                     }
@@ -92,7 +92,7 @@ function App() {
                     to="/today"
                     className={({ isActive }) =>
                       `${isActive
-                        ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[10vw] lg:w-[17vw] mb-1"
+                        ? "bg-[#dbe8dd] flex text-sm h-7 gap-2 p-1 rounded-md w-[8vw]  lg:w-[17vw] mb-1"
                         : "flex text-sm h-7 gap-2 p-1 mb-1"
                       }`
                     }
